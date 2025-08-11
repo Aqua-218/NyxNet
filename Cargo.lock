@@ -3381,6 +3381,7 @@ dependencies = [
  "futures",
  "indicatif",
  "md5",
+ "nyx-sdk",
  "predicates",
  "prost 0.12.6",
  "prost-types",
@@ -3420,7 +3421,7 @@ dependencies = [
  "nyx-stream",
  "nyx-transport",
  "once_cell",
- "prometheus 0.13.4",
+ "prometheus",
  "proptest",
  "rand 0.8.5",
  "rand_distr",
@@ -3596,6 +3597,7 @@ dependencies = [
  "trust-dns-resolver",
  "url",
  "uuid",
+ "windows 0.57.0",
  "x25519-dalek",
 ]
 
@@ -3727,7 +3729,7 @@ dependencies = [
  "nyx-fec",
  "nyx-telemetry",
  "once_cell",
- "prometheus 0.13.4",
+ "prometheus",
  "schemars",
  "semver",
  "serde",
@@ -3758,7 +3760,7 @@ dependencies = [
  "opentelemetry-semantic-conventions 0.29.0",
  "opentelemetry_sdk 0.29.0",
  "pprof",
- "prometheus 0.13.4",
+ "prometheus",
  "rand 0.8.5",
  "serde",
  "serde_json",
@@ -3986,7 +3988,7 @@ dependencies = [
  "once_cell",
  "opentelemetry 0.29.1",
  "opentelemetry_sdk 0.29.0",
- "prometheus 0.14.0",
+ "prometheus",
  "tracing",
 ]
 
@@ -4538,21 +4540,6 @@ dependencies = [
 
 [[package]]
 name = "prometheus"
-version = "0.13.4"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "3d33c28a30771f7f96db69893f78b857f7450d7e0237e9c8fc6427a81bae7ed1"
-dependencies = [
- "cfg-if",
- "fnv",
- "lazy_static",
- "memchr",
- "parking_lot 0.12.4",
- "protobuf 2.28.0",
- "thiserror 1.0.69",
-]
-
-[[package]]
-name = "prometheus"
 version = "0.14.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "3ca5326d8d0b950a9acd87e6a3f94745394f62e4dae1b1ee22b2bc0c394af43a"
@@ -4562,7 +4549,7 @@ dependencies = [
  "lazy_static",
  "memchr",
  "parking_lot 0.12.4",
- "protobuf 3.7.2",
+ "protobuf",
  "thiserror 2.0.12",
 ]
 
@@ -4663,12 +4650,6 @@ checksum = "9091c90b0a32608e984ff2fa4091273cbdd755d54935c51d520887f4a1dbd5b0"
 dependencies = [
  "prost 0.12.6",
 ]
-
-[[package]]
-name = "protobuf"
-version = "2.28.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "106dd99e98437432fed6519dedecfade6a06a73bb7b2a1e019fdd2bee5778d94"
 
 [[package]]
 name = "protobuf"
@@ -6997,6 +6978,16 @@ dependencies = [
 
 [[package]]
 name = "windows"
+version = "0.57.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "12342cb4d8e3b046f3d80effd474a7a02447231330ef77d71daa6fbc40681143"
+dependencies = [
+ "windows-core 0.57.0",
+ "windows-targets 0.52.6",
+]
+
+[[package]]
+name = "windows"
 version = "0.61.3"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "9babd3a767a4c1aef6900409f85f5d53ce2544ccdfaa86dad48c91782c6d6893"
@@ -7040,6 +7031,18 @@ dependencies = [
 
 [[package]]
 name = "windows-core"
+version = "0.57.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "d2ed2439a290666cd67ecce2b0ffaad89c2a56b976b736e6ece670297897832d"
+dependencies = [
+ "windows-implement 0.57.0",
+ "windows-interface 0.57.0",
+ "windows-result 0.1.2",
+ "windows-targets 0.52.6",
+]
+
+[[package]]
+name = "windows-core"
 version = "0.61.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "c0fdd3ddb90610c7638aa2b3a3ab2904fb9e5cdbecc643ddb3647212781c4ae3"
@@ -7075,6 +7078,17 @@ dependencies = [
 
 [[package]]
 name = "windows-implement"
+version = "0.57.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "9107ddc059d5b6fbfbffdfa7a7fe3e22a226def0b2608f72e9d552763d3e1ad7"
+dependencies = [
+ "proc-macro2",
+ "quote",
+ "syn 2.0.104",
+]
+
+[[package]]
+name = "windows-implement"
 version = "0.60.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "a47fddd13af08290e67f4acabf4b459f647552718f683a7b415d290ac744a836"
@@ -7089,6 +7103,17 @@ name = "windows-interface"
 version = "0.56.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "08990546bf4edef8f431fa6326e032865f27138718c587dc21bc0265bbcb57cc"
+dependencies = [
+ "proc-macro2",
+ "quote",
+ "syn 2.0.104",
+]
+
+[[package]]
+name = "windows-interface"
+version = "0.57.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "29bee4b38ea3cde66011baa44dba677c432a78593e202392d1e9070cf2a7fca7"
 dependencies = [
  "proc-macro2",
  "quote",
