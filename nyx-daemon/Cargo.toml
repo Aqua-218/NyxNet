@@ -123,7 +123,7 @@ opentelemetry-semantic-conventions = { version = "0.13", default-features = fals
 
 # HTTP server for Prometheus metrics
 axum = { version = "0.7", default-features = false, features = ["http1", "json", "matched-path", "original-uri", "tokio", "query"] }
-notify = { version = "6", default-features = false, features = ["serde"] }
+notify = { version = "8", default-features = false, features = ["serde"] }
 
 # Crypto and security
 # blake3 = "1.5" # Moved to P2P section above
